@@ -28,6 +28,17 @@ Update `src/main/resources/application.properties` as needed.
 mvn spring-boot:run
 ```
 
+## Frontend (React)
+The React dashboard lives in `frontend/` and proxies API calls to the Spring Boot server.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Optional: set `VITE_API_URL` to point at a hosted API (defaults to `/api` with the dev proxy).
+
 ## API Endpoints
 ### Routes
 - `POST /api/routes` - create a route
