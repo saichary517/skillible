@@ -25,10 +25,43 @@ p {
   margin: 0;
 }
 
+.page {
 .app {
   padding: 32px 6vw 64px;
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.nav__brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #1b1d28;
+}
+
+.nav__links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #4a4e67;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.nav__link--active {
+  color: #24317a;
+  border-bottom: 2px solid #24317a;
 }
 
 .hero {
@@ -37,6 +70,24 @@ p {
   gap: 24px;
   align-items: center;
   margin-bottom: 32px;
+}
+
+.hero--admin {
+  background: linear-gradient(135deg, #eef1ff 0%, #fdfbff 100%);
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.hero--customer {
+  background: linear-gradient(135deg, #fdfbff 0%, #eef1ff 100%);
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.hero--login {
+  background: #f7f6ff;
+  padding: 20px;
+  border-radius: 24px;
 }
 
 .hero__content {
@@ -53,6 +104,20 @@ p {
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.4px;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #e8ecff;
+  color: #24317a;
+  font-weight: 600;
+}
+
+.pill--dark {
+  background: #24317a;
+  color: #fff;
 }
 
 .hero h1 {
@@ -98,6 +163,10 @@ p {
   box-shadow: 0 16px 36px rgba(26, 33, 69, 0.12);
   display: grid;
   gap: 16px;
+}
+
+.hero__card--admin {
+  background: #f9f6ff;
 }
 
 .route-preview {
@@ -186,6 +255,25 @@ select:focus {
   background: #fff;
 }
 
+textarea {
+  border-radius: 12px;
+  border: 1px solid #d7dbee;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #f8f9ff;
+  color: #1b1d28;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #6c7bff;
+  box-shadow: 0 0 0 4px rgba(108, 123, 255, 0.2);
+  background: #fff;
+}
+
 .button {
   border: none;
   border-radius: 14px;
@@ -229,6 +317,76 @@ select:focus {
   display: block;
 }
 
+.tickets {
+  display: grid;
+  gap: 16px;
+}
+
+.ticket {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f7f8ff;
+  border: 1px dashed #c7cdee;
+}
+
+.ticket__meta {
+  display: flex;
+  justify-content: space-between;
+  color: #6a6f89;
+  font-weight: 600;
+}
+
+.ticket__qr {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 14px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e6e9f5;
+}
+
+.list__item span {
+  color: #6a6f89;
+  display: block;
+}
+
+.list__actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.assistant__reply {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e6e9f5;
+  color: #2b2f4a;
+}
+
+.form__error {
+  color: #c0392b;
+  font-weight: 600;
+}
+
 .activity--payments {
   margin-top: 12px;
 }
@@ -255,6 +413,7 @@ select:focus {
 }
 
 @media (max-width: 720px) {
+  .page {
   .app {
     padding: 24px;
   }

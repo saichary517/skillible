@@ -12,6 +12,8 @@ public class RouteRequest {
   @NotBlank
   private String destination;
 
+  private LocalDateTime departureTime;
+
   @NotNull
   private LocalDateTime departureTime;
 

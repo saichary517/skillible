@@ -32,6 +32,15 @@ public class Booking {
   @Column(nullable = false)
   private LocalDateTime createdAt;
 
+  @Column(nullable = false, precision = 10, scale = 2)
+  private java.math.BigDecimal totalAmount;
+
+  @Column(nullable = false, unique = true)
+  private String qrCodePayload;
+
+  @Column(nullable = false, columnDefinition = "TEXT")
+  private String qrCodeImage;
+
   @ManyToOne(optional = false)
   @JoinColumn(name = "route_id")
   private Route route;
@@ -82,6 +91,30 @@ public class Booking {
 
   public void setCreatedAt(LocalDateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public java.math.BigDecimal getTotalAmount() {
+    return totalAmount;
+  }
+
+  public void setTotalAmount(java.math.BigDecimal totalAmount) {
+    this.totalAmount = totalAmount;
+  }
+
+  public String getQrCodePayload() {
+    return qrCodePayload;
+  }
+
+  public void setQrCodePayload(String qrCodePayload) {
+    this.qrCodePayload = qrCodePayload;
+  }
+
+  public String getQrCodeImage() {
+    return qrCodeImage;
+  }
+
+  public void setQrCodeImage(String qrCodeImage) {
+    this.qrCodeImage = qrCodeImage;
   }
 
   public Route getRoute() {
