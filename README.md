@@ -85,6 +85,8 @@ POST /api/routes
 {
   "origin": "City A",
   "destination": "City B",
+  "departureTime": "2024-08-01T09:00:00",
+  "arrivalTime": "2024-08-01T12:00:00",
   "fare": 25.50
 }
 ```

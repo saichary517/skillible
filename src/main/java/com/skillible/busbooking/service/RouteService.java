@@ -25,6 +25,8 @@ public class RouteService {
         request.getArrivalTime() == null ? departureTime.plusHours(2) : request.getArrivalTime();
     route.setDepartureTime(departureTime);
     route.setArrivalTime(arrivalTime);
+    route.setDepartureTime(request.getDepartureTime());
+    route.setArrivalTime(request.getArrivalTime());
     route.setFare(request.getFare());
     return routeRepository.save(route);
   }

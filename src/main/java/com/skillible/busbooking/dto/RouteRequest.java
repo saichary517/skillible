@@ -1,6 +1,7 @@
 package com.skillible.busbooking.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -13,6 +14,10 @@ public class RouteRequest {
 
   private LocalDateTime departureTime;
 
+  @NotNull
+  private LocalDateTime departureTime;
+
+  @NotNull
   private LocalDateTime arrivalTime;
 
   @NotNull

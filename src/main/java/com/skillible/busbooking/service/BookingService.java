@@ -11,6 +11,8 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
+import java.time.LocalDateTime;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,6 +28,10 @@ public class BookingService {
     this.bookingRepository = bookingRepository;
     this.routeService = routeService;
     this.qrCodeService = qrCodeService;
+
+  public BookingService(BookingRepository bookingRepository, RouteService routeService) {
+    this.bookingRepository = bookingRepository;
+    this.routeService = routeService;
   }
 
   public Booking create(BookingRequest request) {
@@ -41,6 +47,7 @@ public class BookingService {
     String qrPayload = buildQrPayload(route.getId());
     booking.setQrCodePayload(qrPayload);
     booking.setQrCodeImage(qrCodeService.generateBase64Png(qrPayload));
+    booking.setCreatedAt(LocalDateTime.now());
     booking.setRoute(route);
     return bookingRepository.save(booking);
   }

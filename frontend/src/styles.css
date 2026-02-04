@@ -26,6 +26,7 @@ p {
 }
 
 .page {
+.app {
   padding: 32px 6vw 64px;
   max-width: 1300px;
   margin: 0 auto;
@@ -413,6 +414,7 @@ textarea:focus {
 
 @media (max-width: 720px) {
   .page {
+  .app {
     padding: 24px;
   }
 
